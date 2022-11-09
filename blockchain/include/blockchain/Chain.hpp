@@ -18,6 +18,7 @@ public:
   void addBlock(Block *block);
   std::vector<Block *> getBlocks();
   Block *getLastBlock();
+  Block *newBlock();
 };
 
 #endif

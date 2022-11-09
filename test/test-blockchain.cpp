@@ -50,10 +50,22 @@ int main(int argc, char *argv[])
 
   chain.addToPending(tx);
   // chain.addToPending(tx);
-
+  
   Block *block = new Block((const char *) "");
   
   chain.addBlock(block);
+
+
+  Tx *tx2 = new Tx(
+      "0482006E9398A6986EDA61FE91674C3A108C399475BF1E738F19DFC2DB11DB1D28130C6B3B28AEF9A9C7E7143DAC6CF12C09B8444DB61679ABB1D86F85C038A58C",
+      "0482006E9398A6986EDA61FE91674C3A108C399475BF1E738F19DFC2DB11DB1D28130C6B3B28AEF9A9C7E7143DAC6CF12C09B8444DB61679ABB1D86F85C038A58C",
+      100
+  );
+
+  chain.addToPending(tx2);
+
+  Block *block2 = chain.newBlock();
+  chain.addBlock(block2);
 
   // std::vector<Tx* > pendingTransactions = chain.getPendingTransactions();
   // decltype(pendingTransactions)::iterator it = pendingTransactions.begin();
@@ -67,6 +79,7 @@ int main(int argc, char *argv[])
 
   for ( ; it != blocks.end(); ++it ) {
     std::cout << "block index " << (*it)->getIndex() << "\n";
+    std::cout << "block prev hash  " << (*it)->getPrevHash()  << "\n";
     std::cout << "block hash  " << (*it)->getHash()  << "\n";
     std::vector<Tx*> transactions = (*it)->getTransactions();
     decltype(transactions)::iterator it2 = transactions.begin();
@@ -75,6 +88,6 @@ int main(int argc, char *argv[])
       std::cout << "\ttx hash  " << (*it2)->getHash()  << "\n";
     }
 
-    std::cout << "\n\n";
+    std::cout << "\n";
   }
 }
