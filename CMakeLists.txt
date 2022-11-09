@@ -10,6 +10,7 @@ enable_language(CXX)
 
 add_subdirectory(blockchain)
 add_subdirectory(http)
+add_subdirectory(keyvalue)
 
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/blockchain/include

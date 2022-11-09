@@ -3,5 +3,6 @@
 
 int main(int argc, char *argv[])
 {
-  Server server;
+  Server *server = new Server(4051);
+  
 }
