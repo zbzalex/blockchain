@@ -10,3 +10,4 @@ compile:
 	cd build && cmake .. && cmake --build .
 	cd build && ./test-blockchain
 	cd build && ./test-http
+	cd build && ./test-contract-lang

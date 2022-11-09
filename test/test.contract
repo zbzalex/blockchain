@@ -1,0 +1,9 @@
+include "include1.contract"
+include "include2.contract"
+
+void main()
+{
+  func1()
+  func2()
+  func3()
+}
