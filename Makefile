@@ -6,4 +6,7 @@ _clean:
 	rm -rf build && mkdir build && cd build && cmake ..
 
 compile:
-	cd build && cmake .. && cmake --build . && ./test-blockchain
+
+	cd build && cmake .. && cmake --build .
+	cd build && ./test-blockchain
+	cd build && ./test-http
