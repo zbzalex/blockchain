@@ -15,7 +15,7 @@ public:
   ~Chain();
   bool addToPending(Tx *tx);
   std::vector<Tx*> getPendingTransactions();
-  bool addBlock(Block *block);
+  void addBlock(Block *block);
   std::vector<Block *> getBlocks();
   Block *getLastBlock();
 };

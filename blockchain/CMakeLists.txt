@@ -20,9 +20,11 @@ add_library(blockchain
     ${CMAKE_CURRENT_SOURCE_DIR}/include/blockchain/SHA256.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/include/blockchain/Tx.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/include/blockchain/Chain.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/blockchain/Block.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Wallet.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Tx.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Chain.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Block.cpp
 )
 
 target_link_libraries(blockchain

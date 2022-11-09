@@ -51,10 +51,20 @@ std::vector<Tx *> Chain::getPendingTransactions()
 };
 
 ////////////////////////////////////////////////////////////////////////////////
-//
+// Add block to blockchain
+// @return void
 ////////////////////////////////////////////////////////////////////////////////
-bool Chain::addBlock(Block *block){
+void Chain::addBlock(Block *block)
+{
+  int size = m_blocks.size();
 
+  block->setIndex(size + 1);
+
+  m_blocks.push_back(block);
+
+  block->setTransactions(m_transactions);
+
+  m_transactions.clear();
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -70,5 +80,5 @@ std::vector<Block *> Chain::getBlocks()
 ////////////////////////////////////////////////////////////////////////////////
 Block *Chain::getLastBlock()
 {
-  return nullptr;
+  return *(m_blocks.end() - 1);
 };
