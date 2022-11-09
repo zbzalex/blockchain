@@ -12,6 +12,7 @@ add_subdirectory(blockchain)
 add_subdirectory(http)
 add_subdirectory(keyvalue)
 add_subdirectory(contract-lang)
+add_subdirectory(vm)
 
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/blockchain/include
