@@ -9,9 +9,9 @@ using json = nlohmann::json;
 ////////////////////////////////////////////////////////////////////////////////
 Server::Server()
 {
-  json jsonArray = json::object();
-  jsonArray["version"] = "1.0.0";
-  std::cout << jsonArray.dump() << "\n";
+  // json jsonArray = json::object();
+  // jsonArray["version"] = "1.0.0";
+  // std::cout << jsonArray.dump() << "\n";
 };
 
 ////////////////////////////////////////////////////////////////////////////////

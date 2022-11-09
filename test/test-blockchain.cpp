@@ -16,10 +16,10 @@ int main(int argc, char *argv[])
   // wallet.create();
   wallet.createFromHex((const char *) "16260783E40B16731673622AC8A5B045FC3EA4AF70F727F3F9E92BDD3A1DDC42");
 
-  std::cout << "priv key " << wallet.getHexKey()
-            << "\n"
-            << "publ key " << wallet.getHexPubKey()
-            << "\n";
+  // std::cout << "priv key " << wallet.getHexKey()
+  //           << "\n"
+  //           << "publ key " << wallet.getHexPubKey()
+  //           << "\n";
 
   const char message[] = "test";
 
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
   Tx *tx = new Tx(
       "0482006E9398A6986EDA61FE91674C3A108C399475BF1E738F19DFC2DB11DB1D28130C6B3B28AEF9A9C7E7143DAC6CF12C09B8444DB61679ABB1D86F85C038A58C",
       "0482006E9398A6986EDA61FE91674C3A108C399475BF1E738F19DFC2DB11DB1D28130C6B3B28AEF9A9C7E7143DAC6CF12C09B8444DB61679ABB1D86F85C038A58C",
-      1
+      101
   );
 
   Chain chain;
@@ -77,16 +77,19 @@ int main(int argc, char *argv[])
   decltype(blocks)::iterator it = blocks.begin();
 
   for ( ; it != blocks.end(); ++it ) {
-    std::cout << "block index " << (*it)->getIndex() << "\n";
-    std::cout << "block prev hash  " << (*it)->getPrevHash()  << "\n";
-    std::cout << "block hash  " << (*it)->getHash()  << "\n";
+    std::cout << "block index     " << (*it)->getIndex() << "\n";
+    std::cout << "block prev hash " << (*it)->getPrevHash()  << "\n";
+    std::cout << "block hash      " << (*it)->getHash()  << "\n";
     std::vector<Tx*> transactions = (*it)->getTransactions();
     decltype(transactions)::iterator it2 = transactions.begin();
     for( ; it2 != transactions.end(); ++it2 ) {
-      std::cout << "\ttx index " << (*it2)->getIndex() << "\n";
-      std::cout << "\ttx hash  " << (*it2)->getHash()  << "\n";
+      std::cout << "\ttx index  " << (*it2)->getIndex() << "\n";
+      std::cout << "\ttx hash   " << (*it2)->getHash()  << "\n";
+      std::cout << "\ttx from   " << (*it2)->getFrom()  << "\n";
+      std::cout << "\ttx to     " << (*it2)->getTo()  << "\n";
+      std::cout << "\ttx amount " << (*it2)->getAmount()  << "\n";
     }
 
-    std::cout << "\n";
+    std::cout << "\n=====\n";
   }
 }

@@ -31,7 +31,8 @@ char *Block::getHash()
 
   ss << m_index
      << m_prevHash
-     << m_timestamp;
+     << m_timestamp
+     << m_transactions.size();
 
   std::string s = ss.str();
 
