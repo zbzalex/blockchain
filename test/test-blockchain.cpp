@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 {
   Wallet wallet;
   // wallet.create();
-  wallet.createFromHex("16260783E40B16731673622AC8A5B045FC3EA4AF70F727F3F9E92BDD3A1DDC42");
+  wallet.createFromHex((const char *) "16260783E40B16731673622AC8A5B045FC3EA4AF70F727F3F9E92BDD3A1DDC42");
 
   std::cout << "priv key " << wallet.getHexKey()
             << "\n"
@@ -72,7 +72,6 @@ int main(int argc, char *argv[])
   // for( ; it != pendingTransactions.end(); ++it) {
   //   std::cout << "txhash " << (*it)->getHash() << "\n";
   // }
-
 
   std::vector<Block *> blocks = chain.getBlocks();
   decltype(blocks)::iterator it = blocks.begin();

@@ -11,18 +11,18 @@ class Wallet
 private:
   EC_KEY *m_keyPairObj;
   //EC_KEY *m_importedKeyPairObj;
-  char *m_hexKey;
-  char *m_hexPubKey;
+  const char *m_hexKey;
+  const char *m_hexPubKey;
 
 public:
   explicit Wallet();
   virtual ~Wallet();
   int create();
-  int createFromHex(char *privKey);
+  int createFromHex(const char *privKey);
   int sign(uint8_t **sig, int *siglen, const char *message, int len);
   bool verify(uint8_t *dig, const uint8_t *sig, int siglen);
-  char *getHexKey();
-  char *getHexPubKey();
+  const char *getHexKey();
+  const char *getHexPubKey();
 };
 
 #endif
